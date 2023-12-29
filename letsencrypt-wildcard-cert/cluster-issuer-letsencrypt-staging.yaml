@@ -11,7 +11,7 @@ spec:
     solvers:
     - selector:
         dnsZones:
-          - "example.com"
+          - "fuzzball.me"
       dns01:
         cloudflare:
           email: kylemunn@gmail.com
