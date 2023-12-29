@@ -17,4 +17,4 @@ spec:
           email: kylemunn@gmail.com
           apiTokenSecretRef:
             name: cloudflare-api-token-secret
-            key: cloudflare_api_token
+            key: api-token
