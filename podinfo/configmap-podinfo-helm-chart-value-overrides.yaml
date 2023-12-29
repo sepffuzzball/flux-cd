@@ -118,10 +118,10 @@ data:
           paths:
             - path: /
               pathType: ImplementationSpecific
-      tls: []
-      #  - secretName: chart-example-tls
-      #    hosts:
-      #      - chart-example.local
+      tls: 
+        - secretName: letsencrypt-wildcard-cert-fuzzball.me
+          hosts:
+            - podinfo.fuzzball.me
 
     linkerd:
       profile:
