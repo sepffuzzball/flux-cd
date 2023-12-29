@@ -6,8 +6,8 @@ metadata:
 spec:
   interval: 30m
   path: ./external-dns
-  prune: true
-  timeout: 10m
+  prune: true # remove any elements later removed from the above path
+  timeout: 10m # if not set, this defaults to interval duration, which is 1h
   sourceRef:
     kind: GitRepository
     name: flux-system
