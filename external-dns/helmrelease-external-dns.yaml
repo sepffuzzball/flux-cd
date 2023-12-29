@@ -7,7 +7,7 @@ spec:
   chart:
     spec:
       chart: external-dns
-      version: 5.1.x # auto-update to semver bugfixes only 
+      version: 6.28.6 # auto-update to semver bugfixes only 
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -122,8 +122,8 @@ spec:
     ##
     sources:
       - crd
-      #- service
-      #- ingress
+      - service
+      - ingress
       # - contour-httpproxy
     ## @param provider DNS provider where the DNS records will be created.
     ## Available providers are:
@@ -703,7 +703,7 @@ spec:
       secretKey: ""
     ## @param domainFilters Limit possible target zones by domain suffixes (optional)
     ##
-    domainFilters: ["fuzzball.me", "sepffuzzball.com"]
+    domainFilters: ["fuzzball.me"]
     ## @param excludeDomains Exclude subdomains (optional)
     ##
     excludeDomains: []
@@ -757,14 +757,14 @@ spec:
     registry: "txt"
     ## @param txtPrefix When using the TXT registry, a prefix for ownership records that avoids collision with CNAME entries (optional)<CNAME record> (Mutual exclusive with txt-suffix)
     ##
-    txtPrefix: "rancher"
+    txtPrefix: "k3s_"
     ## @param txtSuffix When using the TXT registry, a suffix for ownership records that avoids collision with CNAME entries (optional)<CNAME record>.suffix (Mutual exclusive with txt-prefix)
     ##
     txtSuffix: ""
     ## @param txtOwnerId A name that identifies this instance of ExternalDNS. Currently used by registry types: txt & aws-sd (optional)
     ## But other registry types might be added in the future.
     ##
-    txtOwnerId: "rancher"
+    txtOwnerId: ""
     ## @param forceTxtOwnerId (backward compatibility) When using the non-TXT registry, it will pass the value defined by `txtOwnerId` down to the application (optional)
     ## This setting added for backward compatibility for
     ## customers who already used bitnami/external-dns helm chart
@@ -1160,3 +1160,4 @@ spec:
         ## @param  metrics.googlePodMonitor.endpoint The endpoint for Google Managed Prometheus scraping the metrics
         ##
         endpoint: /metrics
+
