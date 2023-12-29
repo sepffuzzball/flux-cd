@@ -121,9 +121,9 @@ spec:
     ## @param sources [array] K8s resources type to be observed for new DNS entries by ExternalDNS
     ##
     sources:
-      #- crd
-      - service
-      - ingress
+      - crd
+      #- service
+      #- ingress
       # - contour-httpproxy
     ## @param provider DNS provider where the DNS records will be created.
     ## Available providers are:
@@ -703,7 +703,7 @@ spec:
       secretKey: ""
     ## @param domainFilters Limit possible target zones by domain suffixes (optional)
     ##
-    domainFilters: []
+    domainFilters: ["fuzzball.me", "sepffuzzball.com"]
     ## @param excludeDomains Exclude subdomains (optional)
     ##
     excludeDomains: []
@@ -757,14 +757,14 @@ spec:
     registry: "txt"
     ## @param txtPrefix When using the TXT registry, a prefix for ownership records that avoids collision with CNAME entries (optional)<CNAME record> (Mutual exclusive with txt-suffix)
     ##
-    txtPrefix: ""
+    txtPrefix: "rancher"
     ## @param txtSuffix When using the TXT registry, a suffix for ownership records that avoids collision with CNAME entries (optional)<CNAME record>.suffix (Mutual exclusive with txt-prefix)
     ##
     txtSuffix: ""
     ## @param txtOwnerId A name that identifies this instance of ExternalDNS. Currently used by registry types: txt & aws-sd (optional)
     ## But other registry types might be added in the future.
     ##
-    txtOwnerId: ""
+    txtOwnerId: "rancher"
     ## @param forceTxtOwnerId (backward compatibility) When using the non-TXT registry, it will pass the value defined by `txtOwnerId` down to the application (optional)
     ## This setting added for backward compatibility for
     ## customers who already used bitnami/external-dns helm chart
