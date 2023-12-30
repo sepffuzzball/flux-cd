@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: reflector-helm-chart-value-overrides
-  namespace: reflector
+  namespace: kube-system
 data:
   values.yaml: |-
     affinity: {}
@@ -41,7 +41,8 @@ data:
       initialDelaySeconds: 5
       periodSeconds: 10
     nameOverride: ""
-    nodeSelector: {}
+    nodeSelector: 
+      node-role.kubernetes.io/control-plane: "true"
     podAnnotations: {}
     podLabels: {}
     podSecurityContext:
@@ -68,4 +69,6 @@ data:
     startupProbe:
       failureThreshold: 10
       periodSeconds: 5
-    tolerations: []
+    tolerations: 
+      - key: node-role.kubernetes.io/control-plane
+        operator: exists

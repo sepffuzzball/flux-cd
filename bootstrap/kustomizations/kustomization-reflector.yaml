@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: reflector
-  namespace: flux-system
+  namespace: kube-system
 spec:
   interval: 15m
   path: reflector
@@ -12,8 +12,8 @@ spec:
     kind: GitRepository
     name: flux-system
   validation: server
-  healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: reflector
-      namespace: reflector
+  #healthChecks:
+  #  - apiVersion: apps/v1
+  #    kind: Deployment
+  #    name: reflector
+  #    namespace: reflector
