@@ -17,7 +17,7 @@ data:
     nfs:
       server: 10.0.2.20
       path: /lcl/containers
-      mountOptions:
+      mountOptions: { nfsvers: 4 }
       volumeName: nfs-subdir-external-provisioner-root
       # Reclaim policy for the main nfs volume
       reclaimPolicy: Retain
