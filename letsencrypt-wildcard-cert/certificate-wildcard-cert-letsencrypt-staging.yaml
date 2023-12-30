@@ -3,6 +3,9 @@ kind: Certificate
 metadata:
   name: letsencrypt-wildcard-cert-fuzzball.me-staging
   namespace: letsencrypt-wildcard-cert
+  annotations:
+    reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+    reflector.v1.k8s.emberstack.com/reflection-allowed-namespaces: "traefik, podinfo, authentik"
 spec:
   # secretName doesn't have to match the certificate name, but it may as well, for simplicity!
   secretName: letsencrypt-wildcard-cert-fuzzball.me-staging 
