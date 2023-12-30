@@ -67,10 +67,18 @@ spec:
       annotations: {}
       labels: {}
       hosts:
-        - host: authentik.fuzzball.me
+        - host: authentik.cluster.local
           paths:
             - path: "/"
               pathType: Prefix
+        - host: authentik.fuzzball.local
+          paths:
+            - path: "/"
+              pathType: Prefix
+        - host: authentik.fuzzball.me
+          paths:
+            - path: "/"
+              pathType: Prefix              
       tls: []
 
     # -- Annotations to add to the server and worker deployments
