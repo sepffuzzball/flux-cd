@@ -54,7 +54,7 @@ data:
       namespace: "kube-system"
     ## @param installCRDs Flag to install cert-manager CRDs
     ##
-    installCRDs: true
+    installCRDs: false
     ## @param replicaCount Number of cert-manager replicas
     ##
     replicaCount: 1
