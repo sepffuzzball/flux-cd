@@ -632,7 +632,7 @@ ports:
     # -- You SHOULD NOT expose the traefik port on production deployments.
     # If you want to access it from outside your cluster,
     # use `kubectl port-forward` or create a secure ingress
-    expose: false
+    expose: true
     # -- The exposed port for this service
     exposedPort: 9000
     # -- The port protocol (TCP/UDP)
@@ -644,7 +644,7 @@ ports:
     # hostPort: 8000
     # containerPort: 8000
     expose: true
-    exposedPort: 80
+    exposedPort: 88
     ## -- Different target traefik port on the cluster, useful for IP type LB
     # targetPort: 80
     # The port protocol (TCP/UDP)
@@ -676,7 +676,7 @@ ports:
     # hostPort: 8443
     # containerPort: 8443
     expose: true
-    exposedPort: 443
+    exposedPort: 448
     ## -- Different target traefik port on the cluster, useful for IP type LB
     # targetPort: 80
     ## -- The port protocol (TCP/UDP)
