@@ -10,7 +10,7 @@ spec:
       version: v1.13.x
       sourceRef:
         kind: HelmRepository
-        name: jetstack
+        name: bitnami
         namespace: flux-system
   interval: 12h
   timeout: 5m
